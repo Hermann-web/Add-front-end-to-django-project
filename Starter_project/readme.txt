@@ -1,0 +1,21 @@
+pour integrer le front
+
+- j'ai ajoute
+	- dans settings
+		- static_dir (ici statics)
+		- le program acobat.apps.AcrobatConfig
+	- les html dans un dossier templates/app que crée
+	- les css/js dans le dossier static_dir (ici statics)
+	- les views pour render chaque html
+- j'ai modifie dans les html
+	- les href=, src=, action= 
+		- ex: scr='app/index.css' devient src={% static 'app/index.css' %}
+		- ex: action='fich.html' devient src={% url 'fich' %}
+			- avec l'hypothese que name='fich' est dans l'url associé à la view views.fich  (qui fait le render de la page fich.html) 
+- j'ai ajoute 
+	- un fichier urls à l'application acrobat
+	- dans ce fichier
+		- les urls pour acceder à mes views
+		- les static_dirs
+	- dans les urls de myprog
+		- un url pour inclure les urls de l'app acrobat
